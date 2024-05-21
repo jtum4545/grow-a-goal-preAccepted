@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'pink',
+      backgroundColor: '#A2FCAB',
     },
   });
   
