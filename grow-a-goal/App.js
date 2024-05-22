@@ -21,17 +21,6 @@ const tabIcons = {
 
 }
 
-const lightThemeColours = {
-  background: '#A2FCAB',
-  tabBackground: '#F6FFBD',
-  borderAndIcons: '#7E6767'
-};
- 
-const darkThemeColours = {
-  background: '#355F3A',
-  tabBackground: '#737373',
-  borderAndIcons: '#D0CBCB'
-};
 
 
 
@@ -41,7 +30,7 @@ export default function App() {
 
       <NavigationContainer>
         <Tab.Navigator
-        
+        initialRouteName='Tree'
         screenOptions={({route}) => ({
           tabBarLabel: ({ focused }) => {
             return (
@@ -120,7 +109,7 @@ const styles = StyleSheet.create({
   },
 
   tabLabelFocused : {
-    color: "black",
+    color: "#7E6767",
     fontWeight: 'bold',
     fontSize: 20,
   },
