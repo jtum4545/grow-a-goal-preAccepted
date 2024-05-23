@@ -7,7 +7,7 @@ import { Picker } from "@react-native-picker/picker";
 
 //Setting lists
 // Dark mode
-// On start view (like where they start on the thingy)
+// On start view (like where they start on the thingy)asdasdas
 
 const themeColours = {
     background: '#A2FCAB',
