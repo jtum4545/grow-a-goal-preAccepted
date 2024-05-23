@@ -26,7 +26,7 @@ export default function SettingsScreen(){
     const [bgColour, setbgColour] = useReState("bgColour", '#A2FCAB')
     const [itemColour, setItemColour] = useReState("itemColour", '#7E6767')
     const [tabBackground, setTabbgColour] = useReState("tabBackground", '#F6FFBD')
-    const [initialTab, setInitialTab] = useState("Profile");
+    const [initialTab, setInitialTab] = useReState("initialTab", "Profile");
 
 
     const [darkModeToggle, setDarkMode] = useState(false);
@@ -46,7 +46,7 @@ export default function SettingsScreen(){
         <SafeAreaView style={[styles.container, {backgroundColor: bgColour}]}>
             <View style={[styles.settingRow, {borderBottomColor: itemColour}]}>
                 <Text style={[styles.settingText,{color: itemColour}]}>Dark mode</Text>
-                <Switch value={darkModeToggle} onValueChange={onToggleSwitch} color={itemColour}/>
+                <Switch value={darkModeToggle} onValueChange={onToggleSwitch} color={itemColour} thumbColor={itemColour} trackColor={itemColour}/>
             </View>
             <View style={[styles.settingRow, {borderBottomColor: itemColour}]}>
                 <Text style={[styles.settingText,{color: itemColour}]}>Initial Tab</Text>
@@ -67,8 +67,12 @@ export default function SettingsScreen(){
                         <Picker.Item label="Settings" value="Settings"/>
                     </Picker>
                 </View>
-
             </View>
+            <SafeAreaView>
+                <TouchableOpacity style={[styles.settingSave, {borderColor: itemColour}]}>
+                    <Text style={{fontSize: 18, fontWeight: 'bold', color: itemColour}}>SAVE</Text>
+                </TouchableOpacity>
+            </SafeAreaView> 
         </SafeAreaView>
     );
 }
@@ -78,7 +82,14 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'start',
+      justifyContent: 'center',
+    },
+
+    settingSave:{
+        marginTop: '10%',
+        marginBottom:'5%',
+        borderWidth: 3,
+        padding: 10,
     },
 
     settingText: {

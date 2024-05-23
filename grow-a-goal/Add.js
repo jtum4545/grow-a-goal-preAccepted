@@ -1,8 +1,11 @@
 import {StyleSheet, View, Text} from "react-native"
+import { useReState } from "@raulpesilva/re-state";
+
 
 export default function AddScreen(){
+    const [bgColour] = useReState("bgColour", '#A2FCAB');
     return(
-        <View style={styles.container}>
+        <View style={[styles.container, {backgroundColor: bgColour}]}>
             <Text>Add</Text>
         </View>
     );
